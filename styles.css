@@ -20,7 +20,7 @@ body {
     align-items: stretch;
     gap: 20px;
     
-    padding: 30px; 
+    padding: 2rem; 
 }
 
 body > * {
