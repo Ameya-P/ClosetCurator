@@ -1,68 +1,147 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+  margin: 0;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+html {
+    font-family: 'Montserrat';
+    color: var(--main-light);
+    height: 100%;
+    background: var(--bg-color);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    /*by default, gradients only fill the content height of the element, and if the viewport is taller than the content, the gradient will repeat.*/
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    
+    padding: 2rem; 
+}
+
+body > * {
+    flex-basis: 100%;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+    font-family: "Milkyway";
+    font-size: 100px;
+    text-shadow: var(--text-border-size-neg) var(--text-border-size-neg) 0 var(--main-dark), var(--text-border-size) var(--text-border-size-neg) 0 var(--main-dark), var(--text-border-size-neg) var(--text-border-size) 0 var(--main-dark), var(--text-border-size) var(--text-border-size) 0 var(--main-dark);
+    text-align: center;
+
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h3 {
+    font-style: italic;
+    font-weight: 400;
+    margin: 0px;
+}
+
+.display {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px; 
+
+    min-height: 300px;
+    margin-bottom: 20px;
+}
+
+.display > div {
+    flex: 1;
+    border-radius: 50px;
+    /*box-shadow: 0 0 30px var(--main-dark);*/
+    border: var(--border-size) solid var(--main-dark);
+    color: var(--main-dark)
+}
+
+.display div h3{
+    font-size: xx-large;
+    text-align: center;
+}
+
+.likes, .dislikes, .neutral {
+    background: var(--main-light);
+}
+
+div h3 {
+    margin: 15px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    min-height: 50px;
+}
+
+textarea {
+    flex: 4;
+    resize: none;
+
+    border: none;
+    background-color: var(--main-light);
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+
+    padding: 15px;
+
+    font-family: 'Montserrat';
+    color: var(--text-dark);
+    line-height: 1.5;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+    flex: 1;
+
+    border: none;
+    background-color: var(--main-dark);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+    padding: 10px;
+
+    font-family: 'Montserrat';
+    font-weight: bold;
+    color: var(--text-dark);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+:root {
+    --main-light: #f3eef7;
+    --main: #e0c6f3;
+    --main-dark: #d19ef5;
+    --bg-color: linear-gradient(#e0c6f3, #C8B6FF);
+
+    --secondary: #FFD6FF;
+
+    --accent-light: white;
+
+    --text-border-size: 2px;
+    --text-border-size-neg: -2px;
+    --border-size: 3px;
+
+    --text-dark: #392544;
+    
+}
+
+
+@font-face {
+    font-family: "Milkyway";
+    src: url('fonts/Milkyway DEMO.ttf') format('truetype');
 }
