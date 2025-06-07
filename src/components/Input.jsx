@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import axious from "axios";
 
 const Input = () => {
@@ -6,6 +6,8 @@ const Input = () => {
   const [result, setResult] = useState(null);
 
   const handleSubmit = async (formData) => {
+    event. preventDefault()
+
     setLoading(true);
     
     try {
