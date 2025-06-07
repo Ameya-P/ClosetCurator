@@ -1,68 +1,272 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/** --------------- GOOGLE FONTS --------------- **/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/** --------------- GENERIC STYLING FOR ALL PAGE ITEMS --------------- **/
+* {
+  margin: 0;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+html {
+    font-family: 'Montserrat';
+    color: var(--main-light);
+    height: 100%;
+    background: var(--bg-color);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    /*by default, gradients only fill the content height of the element, and if the viewport is taller than the content, the gradient will repeat.*/
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    
+    padding: 2rem; 
 }
+
+body > * {
+    flex-basis: 100%;
+}
+
+/** --------------- HEADER STYLING --------------- **/
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+    font-family: "Milkyway";
+    font-size: 125px;
+    text-shadow: var(--text-border-size-neg) var(--text-border-size-neg) 0 var(--main-dark), var(--text-border-size) var(--text-border-size-neg) 0 var(--main-dark), var(--text-border-size-neg) var(--text-border-size) 0 var(--main-dark), var(--text-border-size) var(--text-border-size) 0 var(--main-dark);
+    text-align: center;
+
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin: 0px;
+    font-size: 50px;
+    text-shadow: var(--text-border-size-neg) var(--text-border-size-neg) 0 var(--main-dark), var(--text-border-size) var(--text-border-size-neg) 0 var(--main-dark), var(--text-border-size-neg) var(--text-border-size) 0 var(--main-dark), var(--text-border-size) var(--text-border-size) 0 var(--main-dark);
+    text-align: center;
+}
+
+
+h3 {
+    font-style: italic;
+    font-weight: 400;
+    margin: 0px;
+    text-align: center;
+}
+
+h3 span {
+  text-decoration: underline wavy var(--main-darkest);
+}
+
+hr {
+  border: none;
+  border-top: 5px dotted var(--main-dark);
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+/** DISPLAY STYLING **/
+.display {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 20px; 
+
+    min-height: 350px;
+    margin-bottom: 20px;
+}
+
+.display > div {
+    flex: 1;
+    border-radius: 50px;
+    /*box-shadow: 0 0 30px var(--main-dark);*/
+    border: var(--border-size) solid var(--main-dark);
+    color: var(--main-dark)
+}
+
+.display div h3{
+    font-size: xx-large;
+    text-align: center;
+}
+
+.likes, .dislikes, .neutral {
+    background: var(--main-light);
+    flex: 1 1 200px;
+}
+
+div h3 {
+    margin: 15px;
+}
+
+/** --------------- INPUT STYLING --------------- **/
+form {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 20px;
+    min-height: 50px;
+}
+
+/** CLOTHING IMAGE UPLOAD STYLING **/
+.img-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  flex: 1 0 var(--input-size);
+  background-color: var(--main-light);
+  padding: 10px 10px 10px 10px;
+  border-radius: 15px;
+}
+
+/** Wardrobe Image **/
+img {
+  width: 70%; 
+  height: auto;
+}
+
+/** Upload Button **/
+input[type="file"] {
+  position: relative;
+  font-family: 'Montserrat';
+  color: var(--img-color);
+}
+
+input[type="file"]::file-selector-button {
+  width: 150px;
+  color: transparent;
+}
+
+/* Faked label styles and icon */
+input[type="file"]::before {
+  position: absolute;
+  pointer-events: none;
+  top: 10px;
+  left: 16px;
+  height: 20px;
+  width: 20px;
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg fill='%23AA7EFF' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 46.182 46.182'%3E%3Cpath d='M46.119,34.254c0-3.069-1.831-5.866-4.705-6.952l-16.255-6.293l-0.052-2.079c3.113-0.892,5.406-3.759,5.406-7.156 c0-4.107-3.34-7.448-7.446-7.448c-2.021,0-4.818,1.563-6.336,3.861c-0.38,0.571-0.414,1.324-0.088,1.929 c0.325,0.606,0.955,1.001,1.644,1.001h0.034c0.644,0,1.238-0.364,1.555-0.925c0.668-1.189,2.072-2.018,3.195-2.018 c1.987,0,3.606,1.622,3.606,3.607c0,1.99-1.619,3.609-3.606,3.609c-0.004,0-0.006,0-0.009,0c-0.473,0-0.928,0.183-1.259,0.518 c-0.333,0.337-0.52,0.79-0.514,1.265l0.045,3.834L4.747,27.302C1.876,28.388,0,31.181,0,34.252v1.187 c0,3.443,2.693,6.418,6.135,6.418h33.879c3.439,0,6.168-2.959,6.168-6.401L46.119,34.254z M42.346,35.438 c0,1.324-1.012,2.55-2.334,2.55H6.135c-1.322,0-2.318-1.226-2.318-2.55v-1.188c0-1.484,0.892-2.833,2.278-3.355l16.999-6.44 l16.976,6.44c1.389,0.522,2.275,1.871,2.275,3.355V35.438L42.346,35.438z'/%3E%3C/svg%3E");
+}
+
+input[type="file"]::after {
+  position: absolute;
+  pointer-events: none;
+  top: 11px;
+  left: 40px;
+  font-family: 'Montserrat';
+  color: var(--img-color);
+  content: "Upload Image";
+}
+
+/* file upload button */
+input[type="file"]::file-selector-button {
+  border-radius: 15px;
+  border: 2px solid var(--img-color);
+  padding: 0 16px;
+  height: 40px;
+
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+  background-color: var(--main-light);
+  margin-right: 16px;
+  transition: background-color 800ms;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+/* file upload button hover state */
+input[type="file"]::file-selector-button:hover {
+  background-color: var(--main-light-darker);
+}
+
+/* file upload button active state */
+input[type="file"]::file-selector-button:active {
+  background-color: var(--main-light-darkest);
+}
+
+/** CLOTHING DESCRIPTION INPUT STYLING **/
+textarea {
+    flex: 4 1 var(--input-size);
+    resize: none;
+    min-height: var(--input-size);
+
+    border: none;
+    background-color: var(--main-light);
+    border-radius: 15px;
+
+    padding: 15px;
+
+    font-family: 'Montserrat';
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+
+/** SUBMIT BUTTON **/
+button {
+    flex: 1 1 100px;
+    align-self: center;
+
+    border: none;
+    background-color: var(--main-dark);
+    border-radius: 15px;
+    height: 50px;
+    cursor: pointer;
+
+    padding: 10px;
+
+    font-family: 'Montserrat';
+    font-weight: bold;
+    color: var(--text-dark);
+
+    transition: background-color 800ms;
+}
+
+button:hover {
+  background-color: var(--main-darker);
+}
+
+button:active {
+  background-color: var(--main-darkest);
+}
+
+/** --------------- COLORS AND OTHER FONTS --------------- **/
+:root {
+    --main-light: #f3eef7;
+    --main-light-darker: #e2d7f9;
+    --main-light-darkest: #d9c8fc;
+
+    --main: #e0c6f3;
+
+    --main-dark: #d19ef5;
+    --main-darker: rgb(193, 140, 232);
+    --main-darkest: rgb(175, 117, 218);
+
+    --bg-color: linear-gradient(#e0c6f3, #C8B6FF);
+
+    --secondary: #FFD6FF;
+
+    --accent-light: white;
+
+    --text-border-size: 2px;
+    --text-border-size-neg: -2px;
+    --border-size: 3px;
+
+    --input-size: 150px;
+
+    --text-dark: #392544;
+
+    --img-color: #AA7EFF;
+    
+}
+
+
+@font-face {
+    font-family: "Milkyway";
+    src: url('fonts/Milkyway DEMO.ttf') format('truetype');
 }
