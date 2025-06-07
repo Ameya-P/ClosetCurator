@@ -1,41 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/src/assets/button.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Closet Curator</title>
-</head>
-<body>
-    <div class="header">
-        <h1>Closet Curator</h1>
-        <h3> Enter Your Clothing Likes and Dislikes </h3>
-    </div>
-
-    <div class="display">
-        <div class="likes">
-            <h3>LIKES</h3>
-            <div class="like-box"></div>
-        </div>
-        <div class="dislikes">
-            <h3>DISLIKES</h3>
-            <div class="dislike-box"></div>
-        </div>
-    </div>
-
-
-    <div class="inputs">
-        <form id="like_input">
-            <input type="text" id="my-like" name="my-like" placeholder="Enter a clothing feature you like">
-            <button id="like-button">SUBMIT</button>
-        </form>
-
-        <form id="dislike_input">
-            <input type="text" id="my-dislike" name="my-dislike" placeholder="Enter a clothing feature you dislike">
-            <button id="dislike-button">SUBMIT</button>
-        </form>
-    </div>
-
-    <script src="main.js"></script>
-</body>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
