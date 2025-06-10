@@ -5,17 +5,17 @@ const Display = () => {
     <div className="display">
         <div className="likes">
             <h3>LIKES</h3>
-            <div class="like-box"></div>
+            <div className="like-box"></div>
         </div>
 
         <div className="neutral">
             <h3>NEUTRAL</h3>
-            <div class="neutral-box"></div>
+            <div className="neutral-box"></div>
         </div>
 
         <div className="dislikes">
             <h3>DISLIKES</h3>
-            <div class="dislike-box"></div>
+            <div className="dislike-box"></div>
         </div>
     </div>
   )

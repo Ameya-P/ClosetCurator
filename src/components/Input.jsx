@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import axious from "axios";
+import axios from "axios";
 
 const Input = () => {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
+  const [my_message, setMessage] = useState('');
 
   const handleSubmit = async (formData) => {
     event. preventDefault()
@@ -36,8 +37,8 @@ const Input = () => {
             <img src="wardrobe.png"></img>
             <input type="file" id="imageFile" accept="image/*"/>
         </div>
-        <textarea placeholder="Enter a clothing feature you like"></textarea>
-        <button id="submit" onClick={() => handleSubmit({ message: 'Hello API!' })}
+        <textarea placeholder="Enter a clothing feature you like" onChange={(e) => setMessage(e.target.value)}></textarea>
+        <button id="submit" onClick={() => handleSubmit({ message: my_message })}
         disabled={loading}>SUBMIT</button>
 
         <div>{result && <div>Result: {JSON.stringify(result)}</div>}</div>
